@@ -1,31 +1,26 @@
-const home=(req,res)=>{
+const akkii=require('../model/stuModel')
+
+const homePage=(req,res)=>{
     res.render('home')
 }
-const about=(req,res)=>{
-    res.render('about')
+const save= async(req,res)=>{
+    console.log(req.body)
+
+    const {name,age,city} = req.body
+    console.log(name,age,city)
+
+    const data=await akkii.create({
+         name:name,
+         age:age,
+         city:city
+        
+    })
+    console.log(data)
+    res.render('home')
 }
 
-const stumodel=require('../model/stuModel')
-  
-  const stuSave1= async(req,res)=>{
-      const{name,age,dob}=req.body
-      console.log(name,age,dob)
-
-      const data= await stumodel.create({
-
-          name:name,
-          age:age,
-          dob:dob
-      })
-      console.log(data)
-      res.send("data")
-      res.render('home')
-  }
-
-
-
 module.exports={
-    home,
-    about,
-    stuSave1
+    homePage,
+    save
+
 }

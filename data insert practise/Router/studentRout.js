@@ -1,15 +1,16 @@
 const express=require('express')
+const stuCont=require('../controller/stuContro')
 
-const route=express.Router()
+const stuRoute=express.Router()
 
-const stuCntrl=require('../controller/stuContro')
 
-route.get('/home',stuCntrl.home)
-route.get('/about',stuCntrl.about)
-route.post('/save',stuCntrl.stuSave)
-
+stuRoute.get('/home',stuCont.homePage)
+stuRoute.post('/save',stuCont.save)
 
 
 
 
-module.exports=route
+
+
+
+module.exports=stuRoute
