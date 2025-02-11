@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useContext } from 'react'
-import { mylogContext } from './LoginContext'
+import { myContext } from './LoginContext'
 
 const UnAuthApp = () => {
 
     const[val,setVal]=useState("")
 
-    const{login} = useContext(mylogContext)
+    const{login} = useContext(myContext)
   return (
     <div>
       Enter name:<input type='text' value={val}  onChange={(e)=>{setVal(e.target.value)}} />

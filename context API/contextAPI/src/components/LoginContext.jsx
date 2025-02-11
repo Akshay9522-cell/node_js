@@ -1,31 +1,60 @@
-import React, { useState } from 'react'
-import { createContext } from 'react';
+// import React, { useState } from 'react'
+// import { createContext } from 'react';
 
-const mylogContext=createContext();
+// const mylogContext=createContext();
 
 
-const LoginContext = ({children}) => {
+// const LoginContext = ({children}) => {
 
-const[user,setUser]=useState({name:" ",auth:false});
+// const[user,setUser]=useState({name:" ",auth:false});
 
-const login=(nm)=>{
-     setUser({name:nm,auth:true})
+// const login=(nm)=>{
+//      setUser({name:nm,auth:true})
      
-}
+// }
 
-const logout=()=>{
+// const logout=()=>{
+//       setUser({name:" ",auth:false})
+// }
+
+//   return (
+//     <>
+//       <mylogContext.Provider value={{user,login,logout}}>
+//         {children}
+//         </mylogContext.Provider> 
+
+//     </>
+//   )
+// }
+
+// export default LoginContext
+// export {mylogContext}
+
+import React from 'react'
+import { useState } from 'react'
+import { createContext } from 'react'
+
+const myContext=createContext()
+
+const LoginContext = () => {
+
+   const[user,setUser]=useState({name:"",auth:false})
+
+   const login=(nm)=>{
+       setUser({name:nm,auth:true})
+   }
+
+   const logout=()=>{
       setUser({name:" ",auth:false})
-}
-
+   }
   return (
-    <>
-      <mylogContext.Provider value={{user,login,logout}}>
-        {children}
-        </mylogContext.Provider> 
+    <div>
+      <myContext.Provider value={{user,login,logout}}>
 
-    </>
+      </myContext.Provider>
+    </div>
   )
 }
 
 export default LoginContext
-export {mylogContext}
+export{myContext}
