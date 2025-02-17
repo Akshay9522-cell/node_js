@@ -1,11 +1,11 @@
 import React from 'react'
 import { useContext } from 'react'
 
-import { mylogContext } from './LoginContext'
+import { myContext } from './LoginContext'
 
 const AuthApp = () => {
 
-     const{user,logout}= useContext(mylogContext)
+     const{user,logout}= useContext(myContext)
 
   return (
     <div>
