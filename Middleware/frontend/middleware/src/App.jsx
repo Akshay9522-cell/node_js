@@ -1,6 +1,7 @@
 
 import './App.css'
 import axios from 'axios'
+import New from './components/New'
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <>
+    <New/>
      <button onClick={handleHome}>home</button>
      <button onClick={handleAbout}>About</button>
     </>
