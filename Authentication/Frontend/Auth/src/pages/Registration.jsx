@@ -16,7 +16,7 @@ const Registration = () => {
 
      const handleSubmit= async()=>{
 
-        let api="http://localhost:5000/employe/save"
+        let api="http://localhost:8000/employe/save"
 
          await axios.post(api,input).then((res)=>{
              console.log(res.data)

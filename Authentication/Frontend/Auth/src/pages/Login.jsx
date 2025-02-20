@@ -20,11 +20,12 @@ const Login = () => {
 
      const handlelogin=async()=>{
            
-        let api="http://localhost:5000/employe/login"
+        let api="http://localhost:8000/employe/login"
 
     try {
         await axios.post(api,login).then((res)=>{
             console.log(res.data.email)
+            alert(res)
 
             if(res.status==200){
                 localStorage.setItem("username",res.data.name)
