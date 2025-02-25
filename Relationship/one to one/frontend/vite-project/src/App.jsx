@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Insert from './pages/Insert'
 import Display from './pages/Display'
+import Search from './pages/Search'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
 
       <Route path='insert' element={<Insert/>}/>
       <Route path='display' element={<Display/>}/>
+      <Route path='search' element={<Search/>}/>
 
       </Route>
      </Routes>

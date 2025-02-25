@@ -25,7 +25,7 @@ const Insert = () => {
   return (
     <div>
       <h1>insert</h1>
-
+       id: <input type='number' name='id' onChange={handleInput} />
       username:<input type='text' name='username' onChange={handleInput}/> <br />
       email:<input type='email' name='email'   onChange={handleInput} /> <br />
       first name:<input type='text' name='fname'  onChange={handleInput}/> <br />

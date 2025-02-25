@@ -2,7 +2,8 @@ const mongoose=require('mongoose')
 
 
 const user=new mongoose.Schema({
-
+    
+    id:Number,
     username:String,
     email:String
 })

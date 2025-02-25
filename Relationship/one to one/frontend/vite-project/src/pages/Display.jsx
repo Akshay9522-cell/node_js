@@ -20,6 +20,7 @@ const Display = () => {
     const ans=mydata.map((e)=>{
         return(
             <tr>
+                <td>{e.id}</td>
                 <td>{e.userid.username}</td>
                 <td>{e.userid.email}</td>
                 <td>{e.fname}</td>
@@ -34,6 +35,7 @@ const Display = () => {
 
       <table>
         <tr>
+            <th>id</th>
             <th>username</th>
             <th>email</th>
             <th>firstName</th>

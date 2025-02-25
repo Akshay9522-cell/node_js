@@ -7,6 +7,7 @@ const route=express.Router()
 
 route.post('/save',userContro.save)
 route.get('/display',userContro.Display)
+route.post('/search',userContro.Search)
 
 
 
