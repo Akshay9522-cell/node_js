@@ -16,30 +16,39 @@ const doctorLogin=async(req,res)=>{
     const{email,paswd}=req.body
      
     try {
-        const Doctor = await docModel.findOne({email:email});
-        if (!Doctor)
+        const Doctorlogin = await docModel.findOne({email:email});
+        if (!Doctorlogin)
         {
           res.status(400).send({msg:"Invalid Email!"})
         }
     
-        if (Doctor.paswd!=paswd)
+        if (Doctorlogin.paswd!=paswd)
         {
             res.status(400).send({msg:"Invalid Credentials!"});
         }
     
-        res.status(200).send(Doctor);
-         console.log(Doctor)
+        res.status(200).send(Doctorlogin);
+         console.log(Doctorlogin)
        } catch (error) {
           console.log(error);
        }
     }
 
+   
+    const doctorSearch=async(req,res)=>{
+        const{name,speciality}=req.body
 
+        const Doctor=await docModel.find({$or:[{"name":name},{speciality:speciality}]})
+        console.log(Doctor);
+      res.status(200).send(Doctor);
+     
+    }
 
 
 
 
 module.exports={
     insert,
-    doctorLogin
+    doctorLogin,
+    doctorSearch
 }
