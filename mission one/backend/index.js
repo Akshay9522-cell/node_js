@@ -5,9 +5,11 @@ const router=require('./router/router')
 
 const bodyParser=require('body-parser')
 
+
 require('dotenv').config()
 const app=express()
 app.use(cors())
+app.use(express.static('public'))
 
 // parse application/json
 app.use(bodyParser.json())
@@ -17,6 +19,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/upload', express.static('upload'))
 
+mongoose.connect('').then(()=>{
+    console.log('DB connected successfully')
+})
 
 
 

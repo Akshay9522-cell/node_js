@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Display = () => {
 
      const[show,setShow]=useState([])
+     const nav=useNavigate()
 
      async function displayData() {
           
@@ -33,8 +35,8 @@ const Display = () => {
            )
         })}
 
-       </td>
-                <td><img src={`http://localhost:5000/${e.defaultImage}`} width={300} height={300} /></td>
+       </td >
+                <td  onClick={()=>{nav(`/show/${e._id}`)}} ><img src={`http://localhost:5000/${e.defaultImage}`} width={300} height={300} /></td>
                 <td>{e.name}</td>
                 <td>{e.post}</td>
                 <td>{e.skill}</td>

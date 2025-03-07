@@ -39,6 +39,8 @@ const storage = multer.diskStorage({
 route.post('/sign',upload.array('image',10),controller.sign)
 route.get('/display',controller.display)
 
+route.post('/show',controller.show)
+
 
 
 

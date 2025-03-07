@@ -24,7 +24,15 @@ const display=async(req,res)=>{
     res.send(data)
 }
 
+const show=async(req,res)=>{
+     
+     const{id}=req.body
+     const data=await userModel.findById(id)
+     res.send(data)
+}
+
 module.exports={
     sign,
-    display
+    display,
+    show
 }

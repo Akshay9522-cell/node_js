@@ -5,7 +5,7 @@ import BASE_URL from '../config'
 const Regis = () => {
    
   const[inp,setInp]=useState({})
-  const[image,setImage]=useState()
+  const[image,setImage]=useState('')
 
    const handleInp=async(e)=>{
         let name= e.target.name
@@ -14,7 +14,7 @@ const Regis = () => {
         setInp(values=>({...values,[name]:value}))
    }
     const handleImage=(e)=>{
-       let value=e.target.value
+       let value=e.target.files[0]
        setImage(value)
        console.log(image)
     }
