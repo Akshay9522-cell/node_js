@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/upload', express.static('upload'))
 
-mongoose.connect('').then(()=>{
+mongoose.connect(process.env.MONGODB).then(()=>{
     console.log('DB connected successfully')
 })
 

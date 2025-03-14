@@ -7,7 +7,9 @@ const userSchema=new mongoose.Schema({
     post:String,
     salary:Number,
     special:String,
-    image:String
+    image:String,
+    email:String,
+    password:String
 })
 
 module.exports=mongoose.model('mission',userSchema)

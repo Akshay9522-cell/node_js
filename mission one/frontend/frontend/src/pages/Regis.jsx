@@ -29,6 +29,8 @@ const Regis = () => {
        formData.append("salary",inp.salary)
        formData.append("special",inp.special)
        formData.append('image',image)
+       formData.append('email',inp.email)
+       formData.append('password',inp.password)
       
         await axios.post(api,formData).then((res)=>{
           console.log(res.data)
@@ -45,6 +47,8 @@ const Regis = () => {
       salary:<input type='number' name='salary' onChange={handleInp}/> <br />
       Speciality:<input type='text' name='special' onChange={handleInp} /> <br />
       Proof:<input type='file' name='file' onChange={handleImage} /> <br />
+      Email:<input type='email' name='email' onChange={handleInp}/> <br />
+      paasword:<input type='password' name='password' onChange={handleInp}/> <br />
       <button onClick={saveData} >Registration</button>
     </div>
   )
