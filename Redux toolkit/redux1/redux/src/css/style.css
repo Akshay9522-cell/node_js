@@ -1,0 +1,18 @@
+.sidebar{
+    height: 400px;
+    width: 400px;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 3s ease;
+    transform: translateX(-100%);
+    color: wheat;
+
+}
+.sidebar.open{
+    transform: translateX(0%);
+}
+.sidebar.close{
+    transform: translateX(-100%);
+}
